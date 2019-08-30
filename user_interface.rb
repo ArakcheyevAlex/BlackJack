@@ -29,6 +29,10 @@ class UserInterface
     false
   end
 
+  def clear_screen
+    system 'clear'
+  end
+
   def win(name)
     puts "#{name} wins!!!"
   end
