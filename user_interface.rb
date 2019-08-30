@@ -33,6 +33,26 @@ class UserInterface
     system 'clear'
   end
 
+  def show_player_state(player)
+    puts "#{player.name}'s:"
+    puts " cards: #{player.cards_to_s}"
+    puts " scores: #{player.scores}"
+  end
+
+  def show_balance(player, dealer)
+    puts "Balance ==> #{player.name}: #{player.money}, Dealer: #{dealer.money}"
+  end
+
+  def show_state(game)
+    #clear_screen
+    show_balance(game.player, game.dealer)
+    puts ''
+    show_player_state(game.player)
+    show_player_state(game.dealer)
+
+
+  end
+
   def win(name)
     puts "#{name} wins!!!"
   end

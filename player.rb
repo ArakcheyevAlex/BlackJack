@@ -1,19 +1,28 @@
 # frozen_string_literal: true
 
 class Player
-  attr_reader :name, :scores
+  attr_reader :name
   attr_accessor :money
 
   FULL_HAND_CARDS_LIMIT = 3
 
-  def initialize(name, money)
+  def initialize(name, money, hidden = true)
+    puts hidden
     @name = name
     @money = money
     @cards = []
+    @hidden = hidden
+    @scores = 0
+  end
+
+  def scores
+    return '***' if hidden?
+    @scores
   end
 
   def drop_cards
     self.cards = []
+    @scores = 0
   end
 
   def take_card(card)
@@ -35,9 +44,15 @@ class Player
     money.zero?
   end
 
-  def show_cards
-    cards.each { |card| print card.to_s }
-    puts ''
+  def hidden?
+    @hidden
+  end
+
+  def cards_to_s
+    return 'N/A' if cards.empty?
+    return '**' if hidden
+    cards_str = ''
+    cards.each { |card| cards_str += " #{card.to_s}" }
   end
 
   private
