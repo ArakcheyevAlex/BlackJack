@@ -16,7 +16,12 @@ class BlackJack
   end
 
   def play
+    new_game
+  end
+
+  def new_game
     deal_cards
+    make_bets
 
     ui.show_state(self)
   end
@@ -28,6 +33,10 @@ class BlackJack
       player.take_card(deck.draw_card)
       dealer.take_card(deck.draw_card)
     end
+  end
+
+  def make_bets
+
   end
 
   attr_reader :ui
