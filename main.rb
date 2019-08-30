@@ -7,4 +7,4 @@ require './blackjack'
 require './deck'
 
 game = BlackJack.new
-game.run
+game.play
