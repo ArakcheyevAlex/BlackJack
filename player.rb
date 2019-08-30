@@ -6,7 +6,7 @@ class Player
 
   FULL_HAND_CARDS_LIMIT = 3
 
-  def initilize(name, money)
+  def initialize(name, money)
     @name = name
     @money = money
     @cards = []
