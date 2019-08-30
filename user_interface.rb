@@ -44,13 +44,13 @@ class UserInterface
   end
 
   def show_state(game)
-    #clear_screen
+    clear_screen
+
     show_balance(game.player, game.dealer)
     puts ''
+
     show_player_state(game.player)
     show_player_state(game.dealer)
-
-
   end
 
   def win(name)

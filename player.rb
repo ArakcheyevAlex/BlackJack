@@ -17,6 +17,7 @@ class Player
 
   def scores
     return '***' if hidden?
+
     @scores
   end
 
@@ -51,8 +52,9 @@ class Player
   def cards_to_s
     return 'N/A' if cards.empty?
     return '**' if hidden
+
     cards_str = ''
-    cards.each { |card| cards_str += " #{card.to_s}" }
+    cards.each { |card| cards_str += " #{card}" }
   end
 
   private
