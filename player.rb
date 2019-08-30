@@ -7,7 +7,6 @@ class Player
   FULL_HAND_CARDS_LIMIT = 3
 
   def initialize(name, money, hidden = true)
-    puts hidden
     @name = name
     @money = money
     @cards = []
@@ -51,10 +50,11 @@ class Player
 
   def cards_to_s
     return 'N/A' if cards.empty?
-    return '**' if hidden
+    return '**' if hidden?
 
     cards_str = ''
     cards.each { |card| cards_str += " #{card}" }
+    cards_str
   end
 
   private

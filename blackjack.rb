@@ -16,10 +16,19 @@ class BlackJack
   end
 
   def play
+    deal_cards
+
     ui.show_state(self)
   end
 
   private
+
+  def deal_cards
+    2.times do
+      player.take_card(deck.draw_card)
+      dealer.take_card(deck.draw_card)
+    end
+  end
 
   attr_reader :ui
 end
