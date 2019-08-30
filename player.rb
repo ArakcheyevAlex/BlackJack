@@ -35,6 +35,11 @@ class Player
     money.zero?
   end
 
+  def show_cards
+    cards.each { |card| print card.to_s }
+    puts ''
+  end
+
   private
 
   attr_accessor :cards
